@@ -110,13 +110,15 @@ describe Calculator do
   end
 
   describe "complex expressions" do
-    [
-      [Calculator.new.calc(10).plus(5).minus(2).undo.redo.undo.plus(5), 20],
-      [Calculator.new.calc(10).plus(5).minus(2).undo.undo.redo.redo.redo, 13],
-      [Calculator.new.calc(10).plus(5).minus(2).save.undo.redo.undo.plus(5).to_i, 18]
-    ].each do |(expression, expected_result)|
-      it "should evaluate to the expected value" do
-        expect(expression.to_i).to eq expected_result
+    test_cases = [
+      ["Calculator.new.calc(10).plus(5).minus(2).undo.redo.undo.plus(5)", 20],
+      ["Calculator.new.calc(10).plus(5).minus(2).undo.undo.redo.redo.redo", 12],
+      ["Calculator.new.calc(10).plus(5).minus(2).save.undo.redo.undo.plus(5)", 18]
+    ]
+
+    test_cases.each do |(expression, expected_result)|
+      it "should evaluate #{expression} to #{expected_result}" do
+        expect(eval(expression).to_i).to eq expected_result
       end
     end
   end
