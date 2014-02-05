@@ -1,0 +1,7 @@
+load:
+  - /jasmine-1.1.0.js
+  - /JasmineAdapter-1.1.2.js
+  - /underscore.js
+  - src/*.js
+test:
+  - tests/*.js
