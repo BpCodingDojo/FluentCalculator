@@ -112,7 +112,7 @@ describe Calculator do
   describe "complex expressions" do
     test_cases = [
       ["Calculator.new.calc(10).plus(5).minus(2).undo.redo.undo.plus(5)", 20],
-      ["Calculator.new.calc(10).plus(5).minus(2).undo.undo.redo.redo.redo", 12],
+      ["Calculator.new.calc(10).plus(5).minus(2).undo.undo.redo.redo.redo", 13],
       ["Calculator.new.calc(10).plus(5).minus(2).save.undo.redo.undo.plus(5)", 18]
     ]
 
